@@ -36,10 +36,11 @@ class AddSubscriptonProductCommand extends Command
     {
         $context = Context::createDefaultContext();
         $rand = rand(0, 10).rand(0, 100000);
+        $productNumber = sprintf('TSTTSK %s', $rand);
         $this->productRepository->create([
             [
                 'name' => sprintf('Example subscription product %s', $rand),
-                'productNumber' => sprintf('TSTTSK %s', $rand),
+                'productNumber' => $productNumber,
                 'stock' => 100,
                 'taxId' => $this->getTaxId($context),
                 'price' => [['currencyId' => Defaults::CURRENCY, 'gross' => 50, 'net' => 25, 'linked' => false]],
@@ -48,7 +49,7 @@ class AddSubscriptonProductCommand extends Command
                 ]
             ]
         ], $context);
-        $output->writeln('Subscription product successfully added!');
+        $output->writeln(sprintf('<bg=green;fg=white>Subscription product "%s" successfully added!</>', $productNumber));
 
         return 0;
     }

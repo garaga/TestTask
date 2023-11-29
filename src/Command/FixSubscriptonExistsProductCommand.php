@@ -55,7 +55,7 @@ class FixSubscriptonExistsProductCommand extends Command
                 ]
             ], $context);
         }
-        $output->writeln('Subscription product successfully added!');
+        $output->writeln('<bg=green;fg=white>Products successfully patched!</>');
 
         return 0;
     }

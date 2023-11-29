@@ -9,7 +9,9 @@ All requirements are met / Alle Anforderungen sind erfüllt
 ## Get started
 1. Install and activate plugin
 2. Add product with subscription ```bin/console test_task:add_subscription_product```
-3. Fix entity extension for existing products ```bin/console test_task:fix_subscription_exists_products```
+3. Rebuild admin-fe ```./bin/build-administration.sh```
+4. Clean cache ```bin/console cache:clear```
+5. Fix entity extension for existing products ```bin/console test_task:fix_subscription_exists_products```
 
 
 ## Known bugs
