@@ -1,0 +1,8 @@
+{
+  "test_task": {
+    "subscibe_now": "Subscribe now!"
+  },
+  "checkout": {
+    "subscription_block_error": "You can't buy a regular item and both a subscription item!"
+  }
+}

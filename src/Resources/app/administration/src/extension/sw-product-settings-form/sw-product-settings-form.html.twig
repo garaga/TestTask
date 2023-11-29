@@ -1,0 +1,9 @@
+{% block sw_product_settings_form_content %}
+    {% parent %}
+    <sw-container columns="repeat(auto-fit, minmax(250px, 1fr))" gap="0px 30px">
+        <sw-checkbox-field
+                label="Is Subscription"
+                v-model="product.extensions.subscriptionExtension.isSubscription"
+        ></sw-checkbox-field>
+    </sw-container>
+{% endblock %}

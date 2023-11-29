@@ -1,0 +1,8 @@
+{
+  "test_task": {
+    "subscibe_now": "Abonieren jetzt!"
+  },
+  "checkout": {
+    "subscription_block_error": "Sie können nicht sowohl einen regulären Artikel als auch einen Abonnementartikel kaufen!"
+  }
+}

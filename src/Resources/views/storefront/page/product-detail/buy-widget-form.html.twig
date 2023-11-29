@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+
+
+{% block page_product_detail_buy_button %}
+    {% set buttonAddToCartLabel = (product.extensions.subscriptionExtension.isSubscription ? "test_task.subscibe_now"|trans : "listing.boxAddProduct"|trans) %}
+    <div class="d-grid">
+        <button class="btn btn-primary btn-buy"
+                title="{{ buttonAddToCartLabel|striptags }}"
+                aria-label="{{ buttonAddToCartLabel|striptags }}">
+            {{ buttonAddToCartLabel|sw_sanitize }}
+        </button>
+    </div>
+{% endblock %}

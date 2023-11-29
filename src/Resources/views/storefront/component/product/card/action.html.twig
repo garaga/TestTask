@@ -1,0 +1,10 @@
+{% sw_extends '@Storefront/storefront/component/product/card/action.html.twig' %}
+
+{% set buttonAddToCartLabel = product.extensions.subscriptionExtension.isSubscription ? "test_task.subscibe_now"|trans : "listing.boxAddProduct"|trans %}
+{% block page_product_detail_product_buy_button %}
+    <div class="d-grid">
+        <button class="btn btn-buy" title="{{ buttonAddToCartLabel|striptags }}">
+            {{ buttonAddToCartLabel|sw_sanitize }}
+        </button>
+    </div>
+{% endblock %}

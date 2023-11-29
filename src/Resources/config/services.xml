@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="TestTask\Extension\Content\Product\SubscriptionExtension">
+            <tag name="shopware.entity.extension"/>
+        </service>
+
+        <service id="TestTask\Extension\Content\Product\SubscriptionExtensionDefinition">
+            <tag name="shopware.entity.definition" entity="test_task_subscription_extension" />
+        </service>
+
+        <service id="TestTask\Command\AddSubscriptonProductCommand">
+            <argument type="service" id="product.repository"/>
+            <argument type="service" id="tax.repository"/>
+            <tag name="console.command"/>
+        </service>
+
+        <service id="TestTask\Command\FixSubscriptonExistsProductCommand">
+            <argument type="service" id="product.repository"/>
+            <tag name="console.command"/>
+        </service>
+
+        <service id="TestTask\Core\Checkout\Cart\Custom\SubscriptionCartValidator">
+            <argument type="service" id="product.repository"/>
+            <tag name="shopware.cart.validator"/>
+        </service>
+    </services>
+</container>
