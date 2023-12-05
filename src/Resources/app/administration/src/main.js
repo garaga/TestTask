@@ -2,8 +2,19 @@ import template from './extension/sw-product-settings-form/sw-product-settings-f
 
 Shopware.Component.override('sw-product-settings-form', {
     template,
-    created() {
-        console.log(this.product.extensions);
-        //console.log(this.product._isNew);
-    },
+    inject: ['repositoryFactory'],
+
+    computed: {
+        isSubscription: {
+            get() {
+                return this.product.extensions.subscriptionExtension?.isSubscription ?? null;
+            },
+            set(value) {
+                if (!this.product.extensions.subscriptionExtension) {
+                    this.$set(this.product.extensions, 'subscriptionExtension', this.repositoryFactory.create('test_task_subscription_extension').create());
+                }
+                this.$set(this.product.extensions.subscriptionExtension, 'isSubscription', value);
+            },
+        },
+    }
 });
