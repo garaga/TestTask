@@ -1,3 +1,5 @@
+## Technologies used
+[![SHOPWARE](https://img.shields.io/badge/SHOPWARE-6.5.6.1-blue.svg?style=flat-square&logo=shopware)](https://shopware.com/)
 # Test Task
 
 Test Task Plugin from MDGFK and B2BS for Sergii
